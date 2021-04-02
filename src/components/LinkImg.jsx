@@ -8,7 +8,7 @@ function LinkImg({ product }) {
             <div>
                 {link.map(res =>
                     <div key={res.link}>
-                        {res.link}
+                        <img src={res.link} />
                     </div>
                 )}
             </div>
