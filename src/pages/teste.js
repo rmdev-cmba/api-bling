@@ -19,19 +19,27 @@ export default function Teste({ product }) {
   const id = product.map(prod =>
     <div key={prod.produto.id}>
       <h3>ID: {prod.produto.id}</h3>
+      <p>Length: {prod.produto.imagem.length}</p>
     </div>
   );
 
-  const i = product.map(prod => prod.produto.imagem);
-  const imagem = i.link;
 
+  const img = product.map(prod => prod.produto.imagem);
+  // console.log('i:', i)
+
+  for(let link of img){
+    for(let i=0; i <= img.length; i++){
+    console.log('links im1: ', link[i])
+    }
+  }
+  
 
 
   return (
     <div className={styles.main}>
       { console.log('product ', product)}
-      {console.log('i:', i)}
-      {console.log('imagem:', imagem)}
+      {/* {console.log('res: ', im)} */}
+      {/* {console.log('imagem:', imagem)} */}
       {sidebar}
       <hr />
       {id}
@@ -41,7 +49,7 @@ export default function Teste({ product }) {
   )
 }
 
-// g
+
 export async function getServerSideProps() {
   const { API_KEY } = process.env
 
@@ -51,7 +59,7 @@ export async function getServerSideProps() {
   //console.log('response: ', response);
   const data = await response.json();
   //console.log('apikey: ', API_KEY)
-  console.log('data ', data);
+  // console.log('data ', data);
 
 
   return {
