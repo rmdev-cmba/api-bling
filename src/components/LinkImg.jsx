@@ -1,4 +1,3 @@
-import Image from 'next/image'
 
 function LinkImg({ product }) {
     const img = product.map(prod => prod.produto.imagem);
@@ -9,26 +8,41 @@ function LinkImg({ product }) {
 
 
 
+    // for (let link of img) {
+    //     console.log('length forlink: ', link.length)
+    //     for (let i = 0; i < link.length; i++) {
+
+    //         return (
+
+    //             <div>{link[i].link}</div>
+
+
+    //         )
+
+    //     }
+    // }
+
+
+
     for (let link of img) {
         console.log('length forlink: ', link.length)
-        for (let i = 0; i < link.length; i++) {
 
 
-            return (
-                <div>{link[i].link}</div>
+        return (
+            <ul>
+                {link.map(res =>
+                    <div>
+                        {res.link}
+                    </div>
+                )}
+            </ul>
 
 
-            )
+        )
 
-        }
+
+
     }
-
-
-
-
-
-
-
 }
 
-export default LinkImg;
+    export default LinkImg;
