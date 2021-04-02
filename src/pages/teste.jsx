@@ -20,21 +20,10 @@ export default function Teste({ product }) {
   const id = product.map(prod =>
     <div key={prod.produto.id}>
       <h3>ID: {prod.produto.id}</h3>
-      <p>Length: {prod.produto.imagem.length}</p>
+      <LinkImg imagem={prod.produto.imagem} />
     </div>
   );
 
-/*
-  const img = product.map(prod => prod.produto.imagem);
-  // console.log('i:', i)
-
-  for(let link of img){
-    for(let i=0; i <= img.length; i++){
-    console.log('links im1: ', link[i])
-    }
-  }
-  */
-  
 
 
   return (
@@ -46,8 +35,8 @@ export default function Teste({ product }) {
       <hr />
       {id}
       <hr />
-      <LinkImg product={product}>
-      </LinkImg>
+
+
 
 
     </div>
