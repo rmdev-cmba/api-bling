@@ -1,5 +1,6 @@
 // https://www.youtube.com/watch?v=u1kCtkVR7cE
 
+import LinkImg from '../components/LinkImg';
 import styles from '../styles/Home.module.css'
 
 export default function Teste({ product }) {
@@ -23,7 +24,7 @@ export default function Teste({ product }) {
     </div>
   );
 
-
+/*
   const img = product.map(prod => prod.produto.imagem);
   // console.log('i:', i)
 
@@ -32,6 +33,7 @@ export default function Teste({ product }) {
     console.log('links im1: ', link[i])
     }
   }
+  */
   
 
 
@@ -43,6 +45,9 @@ export default function Teste({ product }) {
       {sidebar}
       <hr />
       {id}
+      <hr />
+      <LinkImg product={product}>
+      </LinkImg>
 
 
     </div>
