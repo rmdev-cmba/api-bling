@@ -1,4 +1,5 @@
 // https://www.youtube.com/watch?v=u1kCtkVR7cE
+import Estoque from '../../components/Estoque';
 import LinkImg from '../../components/LinkImg';
 import PrecoVenda from '../../components/PrecoVenda';
 import styles from '../../styles/Home.module.css'
@@ -12,7 +13,8 @@ export default function Teste({ product }) {
           <p>Codigo: {prod.produto.codigo}</p>
           <p>Descrição: {prod.produto.descricao}</p>
           <PrecoVenda pv={prod.produto.preco} />
-          <p>Estoque: {prod.produto.estoqueAtual}</p>
+          <Estoque est={prod.produto.estoqueAtual} />
+          <span>{' '}{prod.produto.unidade}</span>
 
         </li>
       )}
@@ -38,10 +40,11 @@ export default function Teste({ product }) {
 }
 
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+  const codigo = context.params.codigo
   const { API_KEY } = process.env
 
-  let codigo = 4853
+  // let codigo = 4853
   // buscar dados numa api, por exemplo
   const response = await fetch(`https://bling.com.br/Api/v2/produto/${codigo}/json?apikey=${API_KEY}&estoque=S&imagem=S`); // só vai mostar a primeira página buscada, para buscar novas páginas tem que utilizar o método getStaticPaths
   //console.log('response: ', response);

@@ -7,11 +7,11 @@ function PrecoVenda({ pv }) {
     const precoDesc = (prc*0.95).toFixed(2).replace('.', ',')
         return (
             <div>
-                <span>Preço Venda: {precoMax}</span>
+                <span>Preço Venda: R$ {precoMax}</span>
                 <span> ------ </span>
-                <span>Preço Promoção: {preco}</span>
+                <span>Promoção: R$ {preco}</span>
                 <span> ------ </span>
-                <span>Preço Desc. Max :{precoDesc}</span>
+                <span>Desc. Max: R$ {precoDesc}</span>
             </div>
         )
     
