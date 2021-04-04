@@ -1,5 +1,5 @@
 
-function LinkImg({ imagem }) {
+function ProdImg({ imagem }) {
     // 'imagem' recebe o array 'imagem'
     
         return (
@@ -16,4 +16,4 @@ function LinkImg({ imagem }) {
     
 }
 
-export default LinkImg;
+export default ProdImg;

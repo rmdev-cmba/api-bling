@@ -1,6 +1,6 @@
 // https://www.youtube.com/watch?v=u1kCtkVR7cE
 import Estoque from '../../components/Estoque';
-import LinkImg from '../../components/LinkImg';
+import ProdImg from '../../components/ProdImg';
 import PrecoVenda from '../../components/PrecoVenda';
 import styles from '../../styles/Home.module.css'
 
@@ -10,8 +10,8 @@ export default function Teste({ product }) {
     <ul>
       {product.map(prod =>
         <li key={prod.produto.id}>
-          <p>Codigo: {prod.produto.codigo}</p>
-          <p>Descrição: {prod.produto.descricao}</p>
+          <h2>Código: {prod.produto.codigo}</h2>
+          <h3>Descrição: {prod.produto.descricao}</h3>
           <PrecoVenda pv={prod.produto.preco} />
           <Estoque est={prod.produto.estoqueAtual} />
           <span>{' '}{prod.produto.unidade}</span>
@@ -24,7 +24,7 @@ export default function Teste({ product }) {
   const id = product.map(prod =>
     <div key={prod.produto.id}>
       <h3>Imagem:</h3>
-      <LinkImg imagem={prod.produto.imagem} />
+      <ProdImg imagem={prod.produto.imagem} />
     </div>
   );
 
