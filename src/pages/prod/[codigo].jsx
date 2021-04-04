@@ -3,11 +3,13 @@ import Estoque from '../../components/Estoque';
 import ProdImg from '../../components/ProdImg';
 import PrecoVenda from '../../components/PrecoVenda';
 import styles from '../../styles/Home.module.css'
+import SearchProd from '../../components/SearchProd';
 
 export default function Teste({ product }) {
   console.log('product:', product)
   const sidebar = (
     <ul>
+      <SearchProd />
       {product.map(prod =>
         <li key={prod.produto.id}>
           <h2>Código: {prod.produto.codigo}</h2>
