@@ -1,14 +1,13 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import Router from 'next/router';
-
+import { useRouter } from 'next/router';
 import styles from '../styles/Home.module.css';
-
-const { LOCAL_URL } = process.env
+import { Container, Navbar, Button } from 'reactstrap';
 
 export default function SearchProd() {
-    const [searchText, setSearchText] = useState('');
-    const [itemList, setItemList] = useState([]);
+    const router = useRouter()
+    const [searchText, setSearchText] = useState('')
+    const [itemList, setItemList] = useState([]) // esta linha mantém o campo 'Busca' preenchido
 
     const handleSearch = async () => {
         // aqui é a junção de busca com api/search
@@ -19,8 +18,7 @@ export default function SearchProd() {
                 console.log('cheguei em SearchProd com ', searchText)
 
                 // chama a página correspondete ao path:
-                Router.push(`/prod/${searchText}`)
-               
+                router.push(`/prod/${searchText}`)
 
             } catch (err) {
                 // console.error(err);
@@ -30,30 +28,29 @@ export default function SearchProd() {
 
         }
     }
+
     return (
-        <div className={styles.container}>
+        <div>
             <Head>
-                <title>OS-App</title>
+                <title>App-Bling</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className={styles.main}>
-                <h1 className={styles.title}>Busca</h1>
+            <Navbar color="info" dark expand="md">
+                <Container>
 
-                <input type="text" value={searchText} onChange={e => setSearchText(e.target.value)} />
-                <br />
-                <button onClick={handleSearch}>Buscar</button><br />
-                <a href='/'>Home</a>
+                    <h1 className={styles.title}>Busca</h1>
+                    <div className="form-group mx-sm-3 mb-2">
+                        <input type="text" className="form-control" value={searchText} onChange={e => setSearchText(e.target.value)} />
+                    </div>
+                    <br />
 
-                <hr />
+                    <Button color="warning" onClick={handleSearch}>Buscar</Button><br />
+                    <a href='/'>Home</a>
 
-                {console.log('itemList: ', itemList)}
+                </Container>
+            </Navbar>
 
-              
-
-            </main>
         </div>
     )
-
-
 }
