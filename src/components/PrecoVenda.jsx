@@ -7,7 +7,7 @@ function PrecoVenda({ pv }) {
     const prc = Number(pv)
     const precoMax = (prc/ftd).toFixed(2).replace('.', ',')
     const parc6 = (prc/ftd/6).toFixed(2).replace('.', ',')
-    const parc3 = (prc/ftd/3).toFixed(2).replace('.', ',')
+    const parc3 = (prc/3).toFixed(2).replace('.', ',')
     const preco = prc.toFixed(2).replace('.', ',')
     const precoDesc2 = (prc*0.98).toFixed(2).replace('.', ',')
     const precoDesc4 = (prc*0.96).toFixed(2).replace('.', ',')
@@ -17,8 +17,8 @@ function PrecoVenda({ pv }) {
             <div>
                 <h3>
                 
-                <p>*De R$ {precoMax} em 6x de R$ {parc6} por:</p>
-                <p>*R$ {preco} em 1x ou 3x de R$ {parc3} (desc de {descAplicado}%)</p>
+                <p>*De R$ {precoMax} em 6x de R$ {parc6} por (desc {descAplicado}%):</p>
+                <p>*R$ {preco} em 1x ou 3x de R$ {parc3}</p>
                 <p>*DÉBITO: R$ {precoDesc2} (desc 2%) </p>
                 <span>*DINHEIRO -4%: R$ {precoDesc4} </span>
                 <span>*DIN -5%: R$ {precoDesc5}</span>

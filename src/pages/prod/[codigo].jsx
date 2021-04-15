@@ -47,8 +47,6 @@ export async function getServerSideProps(context) {
   const { API_KEY } = process.env
 
   
-    
-  
   // let codigo = 4853
   // buscar dados numa api, por exemplo
   const response = await fetch(`https://bling.com.br/Api/v2/produto/${codigo}/json?apikey=${API_KEY}&estoque=S&imagem=S`); // só vai mostar a primeira página buscada, para buscar novas páginas tem que utilizar o método getStaticPaths
