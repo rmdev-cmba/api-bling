@@ -7,7 +7,7 @@ import { Container, Navbar, Button } from 'reactstrap';
 export default function SearchProd() {
     const router = useRouter()
     const [searchText, setSearchText] = useState('')
-    const [itemList, setItemList] = useState([]) // esta linha mantém o campo 'Busca' preenchido
+    // const [itemList, setItemList] = useState([]) // esta linha mantém o campo 'Busca' preenchido
 
     const handleSearch = async () => {
         // aqui é a junção de busca com api/search

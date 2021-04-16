@@ -1,4 +1,4 @@
-// https://www.youtube.com/watch?v=u1kCtkVR7cE
+
 import Estoque from '../../components/Estoque';
 import ProdImg from '../../components/ProdImg';
 import PrecoVenda from '../../components/PrecoVenda';
@@ -8,24 +8,26 @@ import SearchProd from '../../components/SearchProd';
 export default function Teste({ product }) {
   console.log('product:', product)
   const sidebar = (
-    <ul>
+    <div>
       <SearchProd />
       {product.map(prod =>
-        <li key={prod.produto.id}>
+        <div key={prod.produto.id}>
           <h2>Código: {prod.produto.codigo}</h2>
           <h3>Descrição: {prod.produto.descricao}</h3>
           <PrecoVenda pv={prod.produto.preco} />
-          <Estoque est={prod.produto.estoqueAtual} />
-          <span>{' '}{prod.produto.unidade}</span>
-
-        </li>
+          <Estoque
+            est={prod.produto.estoqueAtual}
+            un={prod.produto.unidade}
+            loc={prod.produto.localizacao}
+          />
+         
+        </div>
       )}
-    </ul>
+    </div>
   );
 
   const id = product.map(prod =>
     <div key={prod.produto.id}>
-      <h3>Imagem:</h3>
       <ProdImg imagem={prod.produto.imagem} />
     </div>
   );
@@ -46,7 +48,7 @@ export async function getServerSideProps(context) {
   const { codigo } = context.params
   const { API_KEY } = process.env
 
-  
+
   // let codigo = 4853
   // buscar dados numa api, por exemplo
   const response = await fetch(`https://bling.com.br/Api/v2/produto/${codigo}/json?apikey=${API_KEY}&estoque=S&imagem=S`); // só vai mostar a primeira página buscada, para buscar novas páginas tem que utilizar o método getStaticPaths
@@ -54,7 +56,7 @@ export async function getServerSideProps(context) {
   const data = await response.json();
   const product = data.retorno.produtos
 
-// ** inicio tratamento de erros
+  // ** inicio tratamento de erros
   /*
   const dataError = JSON.stringify(data)
   const retError = data.retorno.erros
