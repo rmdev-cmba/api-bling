@@ -1,3 +1,6 @@
+import s from '../styles/Home.module.css';
+
+
 
 function PrecoVenda({ pv }) {
     // 'pv' recebe preco de venda
@@ -16,7 +19,7 @@ function PrecoVenda({ pv }) {
         <div>
             <h3>
                 <p>*De R$ {precoMax} por (desc {descAplicado}%):</p>
-                <h1>*R$ {preco} em 1x ou 3x de R$ {parc3}</h1>
+                <h1 className={s.font2}>*R$ {preco} em 1x ou 3x de R$ {parc3}</h1>
                 <p>*DÉBITO: R$ {precoDesc2} (desc 2%) </p>
                 <span>*DINHEIRO negociar entre {precoDesc25} a R$ {precoDesc5} </span>
             </h3>

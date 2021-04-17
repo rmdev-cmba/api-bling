@@ -120,3 +120,11 @@
     flex-direction: column;
   }
 }
+
+.font {
+  color: blue;
+}
+
+.font2 {
+  color: green;
+}

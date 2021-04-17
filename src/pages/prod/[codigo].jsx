@@ -2,7 +2,7 @@
 import Estoque from '../../components/Estoque';
 import ProdImg from '../../components/ProdImg';
 import PrecoVenda from '../../components/PrecoVenda';
-import styles from '../../styles/Home.module.css'
+import s from '../../styles/Home.module.css'
 import SearchProd from '../../components/SearchProd';
 
 export default function Teste({ product }) {
@@ -12,15 +12,17 @@ export default function Teste({ product }) {
       <SearchProd />
       {product.map(prod =>
         <div key={prod.produto.id}>
-          <h2>Código: {prod.produto.codigo}</h2>
-          <h3>Descrição: {prod.produto.descricao}</h3>
-          <PrecoVenda pv={prod.produto.preco} />
           <Estoque
+            cod={prod.produto.codigo}
             est={prod.produto.estoqueAtual}
             un={prod.produto.unidade}
             loc={prod.produto.localizacao}
           />
-         
+          <h3 className={s.font}>
+            Descrição: {prod.produto.descricao}
+            </h3>
+          <PrecoVenda pv={prod.produto.preco} />
+
         </div>
       )}
     </div>
@@ -33,7 +35,7 @@ export default function Teste({ product }) {
   );
 
   return (
-    <div className={styles.main}>
+    <div className={s.main}>
       {sidebar}
       <hr />
       {id}

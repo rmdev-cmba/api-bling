@@ -1,5 +1,5 @@
 
-function Estoque({ est, un, loc }) {
+function Estoque({ est, un, loc, cod }) {
 
     if (est === 0) {
         return <h1>SEM ESTOQUE</h1>
@@ -10,11 +10,18 @@ function Estoque({ est, un, loc }) {
     }
 
     if (est === 1) {
-        return <h4>ESTOQUE A CONFIRMAR = {est} {un} Localização: {loc}</h4>
+        return <h4>ESTOQUE A CONFIRMAR = {est} {un} Local: {loc}</h4>
     }
 
-    return <h4>Estoque: {est} {un} Localização: {loc}</h4>
-    
+    return (
+        <div>
+            <h1>
+            <span>Código: {cod}</span>
+            <span> Estoque: {est} {un} Local: {loc}</span>
+            </h1>
+        </div>
+    )
+
 }
 
 export default Estoque;
