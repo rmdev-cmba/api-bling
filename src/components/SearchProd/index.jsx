@@ -39,13 +39,13 @@ export default function SearchProd() {
             <Navbar color="info" dark expand="md">
                 <Container>
 
-                    <h1 className={styles.title}>Busca</h1>
+                    <h1 className={styles.title}>Código:</h1>
                     <div className="form-group mx-sm-3 mb-2">
                         <input type="text" className="form-control" value={searchText} onChange={e => setSearchText(e.target.value)} />
                     </div>
                     <br />
 
-                    <Button color="warning" onClick={handleSearch}>Buscar</Button><br />
+                    <Button color="warning" onClick={handleSearch}>Busca</Button><br />
                     <a href='/'>Home</a>
 
                 </Container>
