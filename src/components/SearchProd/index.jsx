@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import styles from './SearchProd.module.css';
+import s from './SearchProd.module.css';
 import { Container, Navbar, Button } from 'reactstrap';
 
 export default function SearchProd() {
@@ -29,6 +29,7 @@ export default function SearchProd() {
         }
     }
 
+
     return (
         <div>
             <Head>
@@ -39,14 +40,34 @@ export default function SearchProd() {
             <Navbar color="info" dark expand="md">
                 <Container>
 
-                    <h1 className={styles.title}>Código:</h1>
+                    <h1 className={s.title}>Código:</h1>
                     <div className="form-group mx-sm-3 mb-2">
-                        <input type="text" className="form-control" value={searchText} onChange={e => setSearchText(e.target.value)} />
+                        <input
+                            id="search"
+                            className="form-control"
+                            placeholder="Digite Codigo"
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                            defaultValue={router.query.q}
+                            value={searchText}
+                            onChange={e => setSearchText(e.target.value)}
+                            onKeyUp={(e) => {
+                                e.preventDefault()
+
+                                if (e.key === 'Enter') {
+                                    const q = e.currentTarget.value
+
+                                    router.push(`/prod/${q}`)
+
+                                }
+                            }}
+                        />
+
                     </div>
                     <br />
 
-                    <Button color="warning" onClick={handleSearch}>Busca</Button><br />
+                    <Button id="myBtn" color="warning" onClick={handleSearch}>Busca</Button><br />
                     <a href='/'>Home</a>
+
 
                 </Container>
             </Navbar>
