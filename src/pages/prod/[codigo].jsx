@@ -1,11 +1,11 @@
-
+import axios from 'axios';
 import Estoque from '../../components/Estoque';
 import ProdImg from '../../components/ProdImg';
 import PrecoVenda from '../../components/PrecoVenda';
 import s from '../../styles/Home.module.css'
 import SearchProd from '../../components/SearchProd';
 
-export default function Teste({ product }) {
+export default function Prod({ product }) {
   console.log('product:', product)
   const sidebar = (
     <div>
@@ -29,9 +29,7 @@ export default function Teste({ product }) {
   );
 
   const id = product.map(prod =>
-    <div key={prod.produto.id}>
       <ProdImg imagem={prod.produto.imagem} />
-    </div>
   );
 
   return (
@@ -45,51 +43,40 @@ export default function Teste({ product }) {
   )
 }
 
+export const getStaticPaths = async () => {
+  const { API_KEY } = process.env
+  const {data}= await axios.get(`https://bling.com.br/Api/v2/produto/3295/json?apikey=${API_KEY}&estoque=S&imagem=S`);
 
-export async function getServerSideProps(context) {
+  const paths = data.map(prod => {
+    return {
+        params: {
+            codigo: prod.codigo // estas páginas serão montadas em build
+        }
+    }
+})
+
+return {
+  paths: paths,
+
+  fallback: 'blocking'
+}
+
+}
+
+export const getStaticSideProps = async (context) =>{
   const { codigo } = context.params
   const { API_KEY } = process.env
 
+  // const response = await fetch(`https://bling.com.br/Api/v2/produto/${codigo}/json?apikey=${API_KEY}&estoque=S&imagem=S`); // só vai mostar a primeira página buscada, para buscar novas páginas tem que utilizar o método getStaticPaths
+  const {data}= await axios.get(`https://bling.com.br/Api/v2/produto/${codigo}/json?apikey=${API_KEY}&estoque=S&imagem=S`);
 
-  // let codigo = 4853
-  // buscar dados numa api, por exemplo
-  const response = await fetch(`https://bling.com.br/Api/v2/produto/${codigo}/json?apikey=${API_KEY}&estoque=S&imagem=S`); // só vai mostar a primeira página buscada, para buscar novas páginas tem que utilizar o método getStaticPaths
-  //console.log('response: ', response);
-  const data = await response.json();
+  // const data = await response.json();
   const product = data.retorno.produtos
-
-  // ** inicio tratamento de erros
-  /*
-  const dataError = JSON.stringify(data)
-  const retError = data.retorno.erros
-  const msgError = retError.map(msg => msg)
-  const msg = retError.map(msg => msg.erro)
-
-  
-  const cod = msg[0].cod
-  if(cod==14){
-    
-  }
-  
-  //console.log('apikey: ', API_KEY)
-  
-  console.log('product retornado:', product)
-  console.log('response retornando:', response)
-  console.log('data extraido de response:', data);
-  if (response.status ==200){
-    console.log('encontrado status:', response.status)
-  }
-  console.log('dataError retornado:', dataError)
-  console.log('retError:', retError)
-  console.log('msgError:', msgError)
-  console.log('msg:', msg)
-  // console.log('cod:', cod)
-  */
-  // **fim tratamento erros
 
 
   return {
     props: { product }
   }
+
 
 }
