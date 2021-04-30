@@ -6,16 +6,15 @@ import { Container, Navbar, Button } from 'reactstrap';
 
 export default function SearchProd() {
     const router = useRouter()
-    const [searchText, setSearchText] = useState('')
+    const [searchText, setSearchText] = useState(0)
     // const [itemList, setItemList] = useState([]) // esta linha mantém o campo 'Busca' preenchido
 
-    const handleSearch = async () => {
+    const handleSearch = () => {
         // aqui é a junção de busca com api/search
 
         if (searchText !== '') {
             // searcText traz o codigo digitado no campo 'Busca' em localhost/index
             try {
-                console.log('cheguei em SearchProd com ', searchText)
 
                 // chama a página correspondete ao path:
                 router.push(`/prod/${searchText}`)
@@ -24,11 +23,9 @@ export default function SearchProd() {
                 // console.error(err);
             }
 
-            return
-
         }
+        return;
     }
-
 
     return (
         <div>
@@ -44,9 +41,9 @@ export default function SearchProd() {
                     <div className="form-group mx-sm-3 mb-2">
                         <input
                             id="search"
+                            // type="number"
                             className="form-control"
                             placeholder="Digite Codigo"
-                            onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                             defaultValue={router.query.q}
                             value={searchText}
                             onChange={e => setSearchText(e.target.value)}
@@ -54,14 +51,11 @@ export default function SearchProd() {
                                 e.preventDefault()
 
                                 if (e.key === 'Enter') {
-                                    const q = e.currentTarget.value
-
-                                    router.push(`/prod/${q}`)
-
+                                    setSearchText(e.currentTarget.value)
+                                    handleSearch()
                                 }
                             }}
                         />
-
                     </div>
                     <br />
 
