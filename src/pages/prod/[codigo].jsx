@@ -1,16 +1,16 @@
 import axios from 'axios';
 import Estoque from '../../components/Estoque';
-import ProdImg from '../../components/ProdImg';
 import PrecoVenda from '../../components/PrecoVenda';
-import s from '../../styles/Home.module.css'
 import SearchProd from '../../components/SearchProd';
+import ProductView from '../../components/ProductView.jsx';
+import s from '../../styles/Home.module.css'
 
 export default function Prod({ product }) {
   const layout = (
     <div>
       <SearchProd />
       {product.map(prod =>
-      <p>
+      <div>
       {console.log('codigo', prod.produto.codigo)}
         
           <Estoque
@@ -19,17 +19,18 @@ export default function Prod({ product }) {
             un={prod.produto.unidade}
             loc={prod.produto.localizacao}
           />
+          
           <h3 className={s.font}>
             Descrição: {prod.produto.descricao}
           </h3>
           <PrecoVenda pv={prod.produto.preco} />
-          </p>
+          </div>
       )}
     </div>
   );
 
   const image = product.map(prod =>
-    <ProdImg imagem={prod.produto.imagem} />
+    <ProductView images={prod.produto.imagem} />
   );
 
   return (
