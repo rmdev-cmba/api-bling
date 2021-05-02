@@ -1,5 +1,6 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import '../styles/globals.css';
+import '../assets/main.css'
+// import '@assets/chrome-bug.css'
+import '../assets/chrome-bug.css'
 
 
 function MyApp({ Component, pageProps }) {

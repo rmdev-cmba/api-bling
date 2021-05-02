@@ -1,12 +1,12 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import s from './SearchProd.module.css';
-import { Container, Navbar, Button } from 'reactstrap';
+import style from '../../styles/Home.module.css'
+
 
 export default function SearchProd() {
     const router = useRouter()
-    const [searchText, setSearchText] = useState(0)
+    const [searchText, setSearchText] = useState('')
     // const [itemList, setItemList] = useState([]) // esta linha mantém o campo 'Busca' preenchido
 
     const handleSearch = () => {
@@ -33,11 +33,8 @@ export default function SearchProd() {
                 <title>App-Bling</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
-            <Navbar color="info" dark expand="md">
-                <Container>
-
-                    <h1 className={s.title}>Código:</h1>
+           
+                    <h1 className={style.title}>Código:</h1>
                     <div className="form-group mx-sm-3 mb-2">
                         <input
                             id="search"
@@ -59,12 +56,9 @@ export default function SearchProd() {
                     </div>
                     <br />
 
-                    <Button id="myBtn" color="warning" onClick={handleSearch}>Busca</Button><br />
+                    <button id="myBtn" color="warning" onClick={handleSearch}>Busca</button><br />
                     <a href='/'>Home</a>
-
-
-                </Container>
-            </Navbar>
+           
 
         </div>
     )
