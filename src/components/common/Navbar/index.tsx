@@ -2,6 +2,7 @@ import {FC} from 'react'
 import Link from 'next/link'
 import s from './Navbar.module.css'
 import  Container  from '../../ui/Container'
+import  Logo  from '../../ui/Logo'
 
 const Navbar: FC = () => (
     // <NavbarRoot>
@@ -10,7 +11,7 @@ const Navbar: FC = () => (
           <div className="flex items-center flex-1">
             <Link href="/">
               <a className={s.logo} aria-label="Logo">
-                {/* <Logo /> */}
+                <Logo />
               </a>
             </Link>
             <nav className="hidden ml-6 space-x-4 lg:block">

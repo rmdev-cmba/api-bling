@@ -1,3 +1,4 @@
+import 'tailwindcss/tailwind.css'
 import '../assets/main.css'
 // import '@assets/chrome-bug.css'
 import '../assets/chrome-bug.css'
