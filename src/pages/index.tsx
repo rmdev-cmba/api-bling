@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className={styles.main}>
      
-      <h1>App Bling</h1>
+      <h1>Home - App Bling</h1>
       <SearchProd />
      
     </div>

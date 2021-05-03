@@ -5,7 +5,7 @@ import PrecoVenda from '../../components/PrecoVenda';
 import SearchProd from '../../components/SearchProd';
 import ProductView from '../../components/ProductView';
 import style from '../../styles/Home.module.css'
-import Navbar from '../../components/common/Navbar';
+
 
 type Product = {
   produto: {
@@ -47,7 +47,7 @@ export default function Prod({ product }: ProductProps) {
           <PrecoVenda pv={prod.produto.preco} />
         </div>
       )}
-      <Navbar />
+      
     </div>
     
   );
