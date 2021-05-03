@@ -7,10 +7,12 @@ import Navbar from '../components/common/Navbar'
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <main>
+      <header>
         <Navbar />
+        </header>
+        <main>
         <Component {...pageProps} />
-      </main>
+        </main>
     </div>
   )
 }
