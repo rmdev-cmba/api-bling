@@ -17,16 +17,16 @@ const Navbar: FC = () => (
             </a>
           </Link>
           <nav className="hidden ml-6 space-x-4 lg:block">
-            <Link href="/search">
+            <Link href="/">
               <a className={s.link}>All</a>
             </Link>
-            <Link href="/search?q=clothes">
+            <Link href="/">
               <a className={s.link}>Clothes</a>
             </Link>
-            <Link href="/search?q=accessories">
+            <Link href="/">
               <a className={s.link}>Accessories</a>
             </Link>
-            <Link href="/search?q=shoes">
+            <Link href="/">
               <a className={s.link}>Shoes</a>
             </Link>
           </nav>

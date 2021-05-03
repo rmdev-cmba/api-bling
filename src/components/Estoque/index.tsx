@@ -3,10 +3,10 @@ function Estoque({ est, un, loc, cod }) {
 
     if (est === 0) {
         return (
-            <div className="">
+            <div className="flex-1 px-4 bg-gray-400 flex flex-col justify-center items-center">
                 
                     <span>Código: {cod}</span>
-                    <span> - SEM ESTOQUE - Local: {loc}</span>
+                    <span className="pt-6 text-2xl text-red font-bold tracking-wide text-center"> - SEM ESTOQUE - Local: {loc}</span>
                 
             </div>
         )

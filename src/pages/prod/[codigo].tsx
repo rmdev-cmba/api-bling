@@ -2,7 +2,6 @@ import { GetStaticPaths, GetStaticProps } from 'next';
 import axios from 'axios';
 import Estoque from '../../components/Estoque';
 import PrecoVenda from '../../components/PrecoVenda';
-import SearchProd from '../../components/SearchProd';
 import ProductView from '../../components/ProductView';
 import style from '../../styles/Home.module.css'
 
@@ -70,7 +69,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const codigo = 3295
   const { data } = await axios.get(`https://bling.com.br/Api/v2/produto/${codigo}/json?apikey=${API_KEY}&estoque=S&imagem=S`);
 
-  console.log('data', data)
+  // console.log('data', data)
 
   const path = data.retorno.produtos.map(prod => {
 
