@@ -14,14 +14,14 @@ function PrecoVenda({ pv }) {
     const precoDesc5 = (prc * 0.95).toFixed(2).replace('.', ',')
 
     return (
-        <div>
-            <h3>
-                <p>*De R$ {precoMax} por (desc {descAplicado}%):</p>
-                <h1 className={s.font}>*R$ {preco} em 1x ou 3x de R$ {parc3}</h1>
-                <p>*DÉBITO: R$ {precoDesc2} (desc 2%) </p>
-                <span>*DINHEIRO negociar entre {precoDesc25} a R$ {precoDesc5} </span>
-            </h3>
-        </div>
+        
+            <div >
+                {/* <p>*De R$ {precoMax} por (desc {descAplicado}%):</p> */}
+                <h1 className={s.price}>*De R$ {precoMax} por R$ {preco} em 1x ou 3x de R$ {parc3}</h1>
+                {/* <p>*DÉBITO: R$ {precoDesc2} (desc 2%) </p> */}
+                {/* <span>*DINHEIRO negociar entre {precoDesc25} a R$ {precoDesc5} </span> */}
+            </div>
+        
     )
 
 }

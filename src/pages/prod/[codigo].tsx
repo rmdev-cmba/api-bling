@@ -29,22 +29,21 @@ type ProductProps = {
 export default function Prod({ product }: ProductProps) {
   const layout = (
     <div>
-      <SearchProd />
+     
       {product.map(prod =>
         <div>
-          {console.log('codigo', prod.produto.codigo)}
-
+          
+         
+          <div className="flex-1 p-4 flex flex-col justify-center items-center ">
+          <h2 className="pt-6 text-3xl text-blue font-bold tracking-wide text-center">{prod.produto.descricao}</h2>
+          <PrecoVenda pv={prod.produto.preco} />
+          </div>
           <Estoque
             cod={prod.produto.codigo}
             est={prod.produto.estoqueAtual}
             un={prod.produto.unidade}
             loc={prod.produto.localizacao}
           />
-
-          <h3 className={style.font}>
-            Descrição: {prod.produto.descricao}
-          </h3>
-          <PrecoVenda pv={prod.produto.preco} />
         </div>
       )}
       

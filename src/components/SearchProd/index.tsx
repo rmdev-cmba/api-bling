@@ -17,7 +17,7 @@ export default function SearchProd() {
             try {
 
                 // chama a página correspondete ao path:
-                router.push(`/prod/${searchText}`)
+                // router.push(`/prod/${searchText}`)
 
             } catch (err) {
                 // console.error(err);
@@ -37,20 +37,23 @@ export default function SearchProd() {
                     <h1 className={style.title}>Código:</h1>
                     <div className="form-group mx-sm-3 mb-2">
                         <input
-                            id="search"
+                            id="search2"
                             // type="number"
                             className="form-control"
                             placeholder="Digite Codigo"
-                            defaultValue={router.query.q}
+                            // defaultValue={router.query.q}
                             value={searchText}
                             onChange={e => setSearchText(e.target.value)}
                             onKeyUp={(e) => {
                                 e.preventDefault()
-
+                                /*
                                 if (e.key === 'Enter') {
                                     setSearchText(e.currentTarget.value)
-                                    handleSearch()
+                                    // handleSearch()
+                                    console.log('searchText', searchText)
+                                    router.push(`/prod/${searchText}`)
                                 }
+                                */
                             }}
                         />
                     </div>

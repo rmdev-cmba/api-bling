@@ -3,31 +3,31 @@ function Estoque({ est, un, loc, cod }) {
 
     if (est === 0) {
         return (
-            <div>
-                <h1>
+            <div className="">
+                
                     <span>Código: {cod}</span>
                     <span> - SEM ESTOQUE - Local: {loc}</span>
-                </h1>
+                
             </div>
         )
     }
 
     if (est < 0) {
-        return <h1>Código: {cod} - ESTOQUE NEGATIVO - Local: {loc}</h1>
+        return <h2>Código: {cod} - ESTOQUE NEGATIVO - Local: {loc}</h2>
     }
 
     if (est === 1) {
         return (
-        <h4>Código: {cod} - ESTOQUE A CONFIRMAR = {est} {un} - Local: {loc}</h4>
+        <h3>Código: {cod} - ESTOQUE A CONFIRMAR = {est} {un} - Local: {loc}</h3>
         )
     }
 
     return (
-        <div>
-            <h1>
-                <span>Código: {cod}</span>
-                <span> - Estoque: {est} {un} - Local: {loc}</span>
-            </h1>
+        <div className="flex-1 px-4 flex flex-col justify-center items-center">
+            
+                <span className="pt-6 text-2xl font-bold tracking-wide text-center">Código: {cod}</span>
+                <span className="pt-6 text-2xl font-normal tracking-wide text-center">Estoque: {est} {un} - Local: {loc}</span>
+            
         </div>
     )
 
