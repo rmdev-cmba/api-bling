@@ -17,7 +17,7 @@ const ProductView = ({ images }) => {
                         // objectFit="cover"
                     />
                     {/* <img src={image.link} /> */}
-                    {console.log('links', image)}
+                    {/* {console.log('links', image)} */}
                 </div>
             ))}
         </div>
