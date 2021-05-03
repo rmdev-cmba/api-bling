@@ -7,7 +7,7 @@ const ProductView = ({ images }) => {
     return (
         <div>
             {images.map(image => (
-                <div key={image.index}>
+                <ul key={image.link}>
                     <img
                         className={style.img}
                         width={1000}
@@ -18,7 +18,7 @@ const ProductView = ({ images }) => {
                     />
                     {/* <img src={image.link} /> */}
                     {/* {console.log('links', image)} */}
-                </div>
+                </ul>
             ))}
         </div>
     )

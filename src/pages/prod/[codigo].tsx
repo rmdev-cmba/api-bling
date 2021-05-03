@@ -8,6 +8,7 @@ import style from '../../styles/Home.module.css'
 
 type Product = {
   produto: {
+    id: string,
     codigo: string;
     descricao: string;
     unidade: string;
@@ -28,14 +29,12 @@ type ProductProps = {
 export default function Prod({ product }: ProductProps) {
   const layout = (
     <div>
-     
-      {product.map(prod =>
-        <div>
-          
-         
+
+      {product.map((prod) =>
+        <ul key={prod.produto.id}>
           <div className="flex-1 p-4 flex flex-col justify-center items-center ">
-          <h2 className="pt-6 text-3xl text-blue font-bold tracking-wide text-center">{prod.produto.descricao}</h2>
-          <PrecoVenda pv={prod.produto.preco} />
+            <h2 className="pt-6 text-3xl text-blue font-bold tracking-wide text-center">{prod.produto.descricao}</h2>
+            <PrecoVenda pv={prod.produto.preco} />
           </div>
           <Estoque
             cod={prod.produto.codigo}
@@ -43,15 +42,16 @@ export default function Prod({ product }: ProductProps) {
             un={prod.produto.unidade}
             loc={prod.produto.localizacao}
           />
-        </div>
-      )}
-      
+        </ul>
+
+      )};
+
     </div>
-    
+
   );
 
   const image = product.map(prod =>
-    <ProductView images={prod.produto.imagem} />
+    <ProductView key={prod.produto.id} images={prod.produto.imagem} />
   );
 
   return (
