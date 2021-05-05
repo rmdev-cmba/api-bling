@@ -6,7 +6,7 @@ const ProductView = ({ images }) => {
     return (
         <div>
             {images.map(image => (
-                <div key={image.index}>
+                <div key={image.link}>
                     <img
                         
                         width={1000}

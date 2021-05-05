@@ -8,6 +8,7 @@ import style from '../../styles/Home.module.scss'
 
 type Product = {
   produto: {
+    id: string;
     codigo: string;
     descricao: string;
     unidade: string;
@@ -28,14 +29,13 @@ type ProductProps = {
 export default function Prod({ product }: ProductProps) {
   const layout = (
     <div>
-     
+
       {product.map(prod =>
-        <div>
-          
-         
+        <ul key={prod.produto.id}>
+
           <div>
-          <h2>{prod.produto.descricao}</h2>
-          <PrecoVenda pv={prod.produto.preco} />
+            <h2>{prod.produto.descricao}</h2>
+            <PrecoVenda pv={prod.produto.preco} />
           </div>
           <Estoque
             cod={prod.produto.codigo}
@@ -43,15 +43,16 @@ export default function Prod({ product }: ProductProps) {
             un={prod.produto.unidade}
             loc={prod.produto.localizacao}
           />
-        </div>
+
+        </ul>
       )}
-      
+
     </div>
-    
+
   );
 
   const image = product.map(prod =>
-    <ProductView images={prod.produto.imagem} />
+    <ProductView key={prod.produto.id} images={prod.produto.imagem} />
   );
 
   return (
