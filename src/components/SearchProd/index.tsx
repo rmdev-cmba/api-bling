@@ -17,7 +17,7 @@ export default function SearchProd() {
             try {
 
                 // chama a página correspondete ao path:
-                // router.push(`/prod/${searchText}`)
+                router.push(`/prod/${searchCodigo}`)
 
             } catch (err) {
                 // console.error(err);
