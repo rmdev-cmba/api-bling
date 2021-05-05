@@ -3,7 +3,7 @@ import axios from 'axios';
 import Estoque from '../../components/Estoque';
 import PrecoVenda from '../../components/PrecoVenda';
 import ProductView from '../../components/ProductView';
-import style from '../../styles/Home.module.css'
+import style from '../../styles/Home.module.scss'
 
 
 type Product = {
@@ -33,8 +33,8 @@ export default function Prod({ product }: ProductProps) {
         <div>
           
          
-          <div className="flex-1 p-4 flex flex-col justify-center items-center ">
-          <h2 className="pt-6 text-3xl text-blue font-bold tracking-wide text-center">{prod.produto.descricao}</h2>
+          <div>
+          <h2>{prod.produto.descricao}</h2>
           <PrecoVenda pv={prod.produto.preco} />
           </div>
           <Estoque
