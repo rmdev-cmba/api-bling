@@ -3,12 +3,11 @@ import axios from 'axios';
 import Estoque from '../../components/Estoque';
 import PrecoVenda from '../../components/PrecoVenda';
 import ProductView from '../../components/ProductView';
-import style from '../../styles/Home.module.css'
+import style from '../../styles/Home.module.scss'
 
 
 type Product = {
   produto: {
-    id: string,
     codigo: string;
     descricao: string;
     unidade: string;
@@ -29,12 +28,14 @@ type ProductProps = {
 export default function Prod({ product }: ProductProps) {
   const layout = (
     <div>
-
-      {product.map((prod) =>
-        <ul key={prod.produto.id}>
-          <div className="flex-1 p-4 flex flex-col justify-center items-center ">
-            <h2 className="pt-6 text-3xl text-blue font-bold tracking-wide text-center">{prod.produto.descricao}</h2>
-            <PrecoVenda pv={prod.produto.preco} />
+     
+      {product.map(prod =>
+        <div>
+          
+         
+          <div>
+          <h2>{prod.produto.descricao}</h2>
+          <PrecoVenda pv={prod.produto.preco} />
           </div>
           <Estoque
             cod={prod.produto.codigo}
@@ -42,16 +43,15 @@ export default function Prod({ product }: ProductProps) {
             un={prod.produto.unidade}
             loc={prod.produto.localizacao}
           />
-        </ul>
-
-      )};
-
+        </div>
+      )}
+      
     </div>
-
+    
   );
 
   const image = product.map(prod =>
-    <ProductView key={prod.produto.id} images={prod.produto.imagem} />
+    <ProductView images={prod.produto.imagem} />
   );
 
   return (

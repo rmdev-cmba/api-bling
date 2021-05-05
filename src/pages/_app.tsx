@@ -1,18 +1,15 @@
-// import 'tailwindcss/tailwind.css'
-import '../assets/main.css'
-import '../assets/chrome-bug.css'
-import Navbar from '../components/common/Navbar'
+import '../styles/global.scss'
+import Navbar from '../components/Navbar'
+
 
 
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <header>
+      <main>
         <Navbar />
-        </header>
-        <main>
         <Component {...pageProps} />
-        </main>
+      </main>
     </div>
   )
 }
