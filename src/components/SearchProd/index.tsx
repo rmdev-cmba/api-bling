@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import style from './SearchProd.module.scss'
+import style from './SearchProd.module.css'
 
 
 export default function SearchProd() {

@@ -6,19 +6,20 @@
   background: rgb(237, 237, 243);
   width: 50rem;
   height: 4rem;
+}
 
-  h1 {
+ .search h1 {
     display: flex;
     flex: 1;
     justify-content: center;
     align-items: center;
-    // width: auto;
+    /* width: auto; */
     font-size: 2.5rem;
   }
 
   
 
-  a, button {
+  .search button, .search a {
     display: flex;
     width: 8rem;
     align-items: center;
@@ -27,15 +28,17 @@
     text-decoration: none;
   }
 
-  button {
+  .search button {
     width: 6rem;
   
 
-   &:hover {
-      color: white;
-      border-color: #0070f3;
-      background: #0070f3;
-    }
+   
+  }
+
+  .search:hover {
+    color: white;
+    border-color: #0070f3;
+    background: #0070f3;
   }
 
   .input {
@@ -49,7 +52,7 @@
     
   }
 
-  // h1 {
-  //   text-align: left;
-  // }
-}
+  /* h1 {
+     text-align: left;
+   } */
+

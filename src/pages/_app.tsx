@@ -1,4 +1,5 @@
-import '../styles/global.scss'
+import '../styles/global.css'
+import s from '../styles/Home.module.css'
 import Navbar from '../components/Navbar'
 
 
@@ -6,7 +7,7 @@ import Navbar from '../components/Navbar'
 function MyApp({ Component, pageProps }) {
   return (
     <div>
-      <main>
+      <main className={s.container}>
         <Navbar />
         <Component {...pageProps} />
       </main>

@@ -3,7 +3,7 @@ import axios from 'axios';
 import Estoque from '../../components/Estoque';
 import PrecoVenda from '../../components/PrecoVenda';
 import ProductView from '../../components/ProductView';
-import style from '../../styles/Home.module.scss'
+import style from '../../styles/Home.module.css'
 
 
 type Product = {

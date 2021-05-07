@@ -1,16 +1,15 @@
 import { FC } from 'react'
 import Link from 'next/link'
-import style from './Navbar.module.scss'
+import style from './Navbar.module.css'
 import SearchProd from '../SearchProd'
 
 
 const Navbar: FC = () => (
 
-  <div className={style.container}>
+  // <div className={style.container}>
+  <div>
 
     <div>
-     
-
       <nav>
         <Link href="/">
           <a>All</a>
