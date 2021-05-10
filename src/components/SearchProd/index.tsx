@@ -28,18 +28,18 @@ export default function SearchProd() {
     }
 
     return (
-        <div >
+        <div>
             <Head>
                 <title>App-Bling</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <div className={style.search}>
-                <h1>Código:</h1>
+            <div>
+                {/* <h1>Código:</h1> */}
                 <input
-                    id="search"
+                    id="busca"
                     // type="number"
-                    className={style.input}
+                    // className={style.input}
                     placeholder="Digite Codigo"
                     // defaultValue={router.query.q}
                     value={searchCodigo}
