@@ -1,9 +1,11 @@
 
-.container {
+/* .container {
     max-width: 60rem;
     padding: 0 1rem;
     margin: 3rem auto 6rem;
     background: rgb(218, 193, 193);
     display: flex;
     flex: 1;
-  }
+    justify-content: center;
+    align-items: center;
+  } */

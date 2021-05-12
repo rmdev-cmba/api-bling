@@ -1,6 +1,6 @@
+import Header from '../components/Header';
 import Layout from '../components/Layout';
-import Navbar from '../components/Navbar';
-import SearchProd from '../components/SearchProd';
+import style from '../styles/Home.module.css';
 
 
 export default function Home() {
@@ -8,8 +8,9 @@ export default function Home() {
   return (
     
       <Layout>
-        <Navbar />
-        <SearchProd />
+        <Header></Header>
+        <main>PRINCIPAL</main>
+        <footer>RODAPÉ</footer>
       </Layout>
     
   )

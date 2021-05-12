@@ -28,45 +28,39 @@ export default function SearchProd() {
     }
 
     return (
+
         <div>
-            <Head>
-                <title>App-Bling</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+            <input
+                id="busca"
+                // type="number"
+                // className={style.input}
+                placeholder="Digite Codigo"
+                // defaultValue={router.query.q}
+                value={searchCodigo}
+                onChange={e => setSearchCodigo(e.target.value)}
+                onKeyUp={(e) => {
+                    e.preventDefault()
+                    if (e.key === 'Enter') {
+                        const q = e.currentTarget.value
+                        if (q == '' || q.length < 4) {
+                            alert('Não pode ser vazio ou digite 4 dígitos')
 
-            <div>
-                {/* <h1>Código:</h1> */}
-                <input
-                    id="busca"
-                    // type="number"
-                    // className={style.input}
-                    placeholder="Digite Codigo"
-                    // defaultValue={router.query.q}
-                    value={searchCodigo}
-                    onChange={e => setSearchCodigo(e.target.value)}
-                    onKeyUp={(e) => {
-                        e.preventDefault()
-                        if (e.key === 'Enter') {
-                            const q = e.currentTarget.value
-                            if (q == '' || q.length < 4) {
-                                alert('Não pode ser vazio ou digite 4 dígitos')
-
-                            } else {
-                                setSearchCodigo(q)
-                                router.push(`/prod/${searchCodigo}`)
-                            }
-                            return;
-
+                        } else {
+                            setSearchCodigo(q)
+                            router.push(`/prod/${searchCodigo}`)
                         }
-                    }}
-                />
+                        return;
 
-                <br />
+                    }
+                }}
+            />
 
-                <button id="myBtn" color="warning" onClick={handleSearch}>Busca</button><br />
-                <a href='/'>Home</a>
-            </div>
+            <br />
+
+            <button id="myBtn" color="warning" onClick={handleSearch}>Busca</button><br />
+            <a href='/'>Home</a>
         </div>
+
 
     )
 }

@@ -7,18 +7,16 @@ import style from './Navbar.module.css'
 const Navbar: FC = () => (
 
   <nav>
-    <Link href="/">
-      <a>All</a>
-    </Link>
-    <Link href="/">
-      <a>Clothes</a>
-    </Link>
-    <Link href="/">
-      <a>Accessories</a>
-    </Link>
-    <Link href="/">
-      <a>Shoes</a>
-    </Link>
+    <ul className={style.menu}>
+    <li><Link href="/"><a>All</a></Link></li>
+         
+    <li><Link href="/"><a>Clothes</a></Link></li>
+         
+    <li><Link href="/"><a>Accessories</a></Link></li>
+         
+    <li><Link href="/"><a>Shoes</a></Link></li>
+          
+    </ul>
   </nav>
 
 )

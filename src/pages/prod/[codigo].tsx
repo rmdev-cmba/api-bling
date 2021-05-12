@@ -4,6 +4,7 @@ import Estoque from '../../components/Estoque';
 import PrecoVenda from '../../components/PrecoVenda';
 import ProductView from '../../components/ProductView';
 import style from '../../styles/Home.module.css'
+import Header from '../../components/Header';
 
 
 type Product = {
@@ -29,7 +30,6 @@ type ProductProps = {
 export default function Prod({ product }: ProductProps) {
   const layout = (
     <div>
-
       {product.map(prod =>
         <ul key={prod.produto.id}>
 
@@ -56,12 +56,14 @@ export default function Prod({ product }: ProductProps) {
   );
 
   return (
-    <div className={style.main}>
-      {layout}
-      <hr />
-      {image}
-      <hr />
-    </div>
+    <>
+      <Header></Header>
+      <div className={style.main}>
+        {image}
+        <hr />
+        {layout}
+      </div>
+    </>
   )
 }
 

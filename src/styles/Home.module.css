@@ -22,15 +22,11 @@
   }
   
 
-  /* .main {
-    padding: 5rem 0;
-    flex: 1;
+  .main {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  } */
-  
+  }
+   
+
 /* 
   .footer {
     width: 100%;
