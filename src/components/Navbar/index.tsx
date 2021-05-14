@@ -8,7 +8,7 @@ const Navbar: FC = () => (
 
   <nav>
     <ul className={style.menu}>
-    <li><Link href="/"><a>All</a></Link></li>
+    <li><Link href="/"><a>EletroRM</a></Link></li>
          
     <li><Link href="/"><a>Clothes</a></Link></li>
          

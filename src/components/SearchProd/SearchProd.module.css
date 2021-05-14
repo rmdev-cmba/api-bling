@@ -1,63 +1,40 @@
-.search {
+.inputSearch {
+  position: relative;
   display: flex;
-  flex: 1;
-  justify-content: center;
-  margin-left: 25rem;
-  background: rgb(237, 237, 243);
-  width: 50rem;
-  height: 4rem;
+  /* flex-wrap: wrap; */
+  width: 37.5rem;
+  padding: 4px 0;
+  background: white;
+  align-items: center;
+  border-radius: 0.25rem;
 }
 
- .search h1 {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    /* width: auto; */
-    font-size: 2.5rem;
-  }
+.inputSearch button {
+  /* position: relative; */
+  /* z-index: 2; */
+  font-size: 1.5rem;
+  background-color: #1226aa;
+  /* border-right: 5px solid #fff; */
+  color: #fff;
+  height: 2.5rem;
+  margin: 0 2px 0 0;
+  border-radius: 10px;
+}
 
-  
+.input {
+  width: 100%;
+  height: 2.75rem;
+  font-size: 1.5rem;
+  margin: 0 6px;
+  border: none;
+  padding: 1.5rem;
+}
 
-  .search button, .search a {
-    display: flex;
-    width: 8rem;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    text-decoration: none;
-  }
-
-  .search button {
-    width: 6rem;
-  
-
-   
-  }
-
-  .search:hover {
-    color: white;
-    border-color: #0070f3;
-    background: #0070f3;
-  }
-
-  .input {
-    
-    width: 22rem;
-    background-color: #ccc;
-    border: none;
-    font-size: 2rem;
-    display: flex;
-    padding: 0rem 4rem;
-    
-  }
-
-  /* #busca input {
+/* #busca input {
     width: 25rem;
     background-color: rgb(192, 67, 67);
   } */
 
-  /* h1 {
+/* h1 {
      text-align: left;
    } */
-

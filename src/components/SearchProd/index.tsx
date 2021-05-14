@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { useState } from 'react'
 import { useRouter } from 'next/router'
-import style from './SearchProd.module.css'
+import styles from './SearchProd.module.css'
 
 
 export default function SearchProd() {
@@ -29,14 +29,15 @@ export default function SearchProd() {
 
     return (
 
-        <div>
+        <div className={styles.inputSearch}>
             <input
-                id="busca"
-                // type="number"
-                // className={style.input}
-                placeholder="Digite Codigo"
+                id="inputSearch"
+                type="search"
+                className={styles.input}
+                placeholder="Digite o código, somente números"
                 // defaultValue={router.query.q}
                 value={searchCodigo}
+                required
                 onChange={e => setSearchCodigo(e.target.value)}
                 onKeyUp={(e) => {
                     e.preventDefault()
@@ -55,10 +56,10 @@ export default function SearchProd() {
                 }}
             />
 
-            <br />
+            <div className={styles.btn}>
+                <button id="myBtn" color="warning" onClick={handleSearch}>Busca</button>
+            </div>
 
-            <button id="myBtn" color="warning" onClick={handleSearch}>Busca</button><br />
-            <a href='/'>Home</a>
         </div>
 
 
