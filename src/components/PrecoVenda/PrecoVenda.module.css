@@ -1,0 +1,16 @@
+
+.pv {
+    margin: 25px 0;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 25px;
+}
+
+.pv span {
+    font-weight: 500;
+    font-size: 36px;
+    /* color:aquamarine; */
+}
+
+.pv p {
+    font-size:24px
+}

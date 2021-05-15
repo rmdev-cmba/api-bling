@@ -1,23 +1,27 @@
+import Image from 'next/image'
+import styles from './ProductView.module.css';
 
 const ProductView = ({ images }) => {
     // 'imagem' recebe o array 'imagem'
-    // console.log('img', imagem[1])
+   
+    // for (let i = 0; i < images.length; i++){
+    //     // console.log('img',i , images[i])
+    // }
+
+    const linksImagens = images.map(image => (image.link))
+
 
     return (
-        <div>
-            {images.map(image => (
-                <div key={image.link}>
-                    <img
-                        
-                        width={1000}
-                        height={1000}
-                        // layout="responsive" não aceitou
-                        src={image.link}
-                        // objectFit="cover"
-                    />
-                    
-                </div>
-            ))}
+        <div className={styles.imgGroup}>
+
+            <div>
+                <Image 
+                src={linksImagens[0]}
+                width={600}
+                height={600}
+                 />
+            </div>
+            
         </div>
     )
 

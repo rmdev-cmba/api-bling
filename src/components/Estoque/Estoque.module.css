@@ -1,0 +1,15 @@
+
+
+.stocking h2 {
+    font-weight: 200;
+    /* color:red; */
+}
+
+.stocking span {
+    font-weight: 500;
+    color:black;
+}
+.stocking p {
+    font-weight: 500;
+    color:red;
+}

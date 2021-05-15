@@ -1,0 +1,12 @@
+.imgGroup {
+    font-family: Panton,sans-serif;
+    margin: 0px;
+    border: 1px solid transparent;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: .25s ease;
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+
+}

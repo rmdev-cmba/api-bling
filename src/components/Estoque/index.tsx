@@ -1,3 +1,5 @@
+import style from './Estoque.module.css';
+
 
 function Estoque({ est, un, loc, cod }) {
 
@@ -5,7 +7,7 @@ function Estoque({ est, un, loc, cod }) {
         return (
             <div>
                 
-                    <span>Código: {cod}</span>
+                    <p>Código: {cod}</p>
                     <span> - SEM ESTOQUE - Local: {loc}</span>
                 
             </div>
@@ -18,15 +20,15 @@ function Estoque({ est, un, loc, cod }) {
 
     if (est === 1) {
         return (
-        <h3>Código: {cod} - ESTOQUE A CONFIRMAR = {est} {un} - Local: {loc}</h3>
+        <h2>Código: {cod} - ESTOQUE A CONFIRMAR = {est} {un} - Local: {loc}</h2>
         )
     }
 
     return (
-        <div>
+        <div className={style.stocking}>
             
-                <span>Código: {cod}</span>
-                <span>Estoque: {est} {un} - Local: {loc}</span>
+                <h2>Código: {cod}</h2>
+                <p>Estoque: {est} {un} - <span>Local: {loc}</span></p>
             
         </div>
     )

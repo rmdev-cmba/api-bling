@@ -29,14 +29,12 @@ type ProductProps = {
 
 export default function Prod({ product }: ProductProps) {
   const layout = (
-    <div>
+    <>
       {product.map(prod =>
-        <ul key={prod.produto.id}>
+        <div className={style.product} key={prod.produto.id}>
 
-          <div>
-            <h2>{prod.produto.descricao}</h2>
-            <PrecoVenda pv={prod.produto.preco} />
-          </div>
+          <p>{prod.produto.descricao}</p>
+          <PrecoVenda pv={prod.produto.preco} />
           <Estoque
             cod={prod.produto.codigo}
             est={prod.produto.estoqueAtual}
@@ -44,10 +42,10 @@ export default function Prod({ product }: ProductProps) {
             loc={prod.produto.localizacao}
           />
 
-        </ul>
+        </div>
       )}
 
-    </div>
+    </>
 
   );
 
@@ -60,7 +58,7 @@ export default function Prod({ product }: ProductProps) {
       <Header></Header>
       <div className={style.main}>
         {image}
-        <hr />
+        {/* <hr /> */}
         {layout}
       </div>
     </>

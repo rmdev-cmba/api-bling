@@ -11,6 +11,7 @@ body, ul, li, p  {
 
 * {
   box-sizing: border-box;
+  outline: 0px;
 }
 
 a {

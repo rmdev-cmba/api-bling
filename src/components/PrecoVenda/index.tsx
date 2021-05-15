@@ -1,4 +1,4 @@
-
+import style from './PrecoVenda.module.css';
 
 function PrecoVenda({ pv }) {
     // 'pv' recebe preco de venda
@@ -20,9 +20,10 @@ function PrecoVenda({ pv }) {
 
     return (
         
-            <div >
+            <div className={style.pv}>
                 {/* <p>*De R$ {precoMax} por (desc {descAplicado}%):</p> */}
-                <h1>*De R$ {precoMax} por R$ {preco} em até 3x de R$ {parc3}</h1>
+                <h2>De R$ {precoMax} por <span>R$ {preco}</span></h2>
+                <p> Em até 3x de R$ {parc3}</p>
                 {/* <p>*DÉBITO: R$ {precoDesc2} (desc 2%) </p> */}
                 {/* <span>*DINHEIRO negociar entre {precoDesc25} a R$ {precoDesc5} </span> */}
             </div>

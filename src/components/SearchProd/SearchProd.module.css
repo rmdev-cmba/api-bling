@@ -1,7 +1,6 @@
 .inputSearch {
   position: relative;
   display: flex;
-  /* flex-wrap: wrap; */
   width: 37.5rem;
   padding: 4px 0;
   background: white;
@@ -10,11 +9,8 @@
 }
 
 .inputSearch button {
-  /* position: relative; */
-  /* z-index: 2; */
   font-size: 1.5rem;
   background-color: #1226aa;
-  /* border-right: 5px solid #fff; */
   color: #fff;
   height: 2.5rem;
   margin: 0 2px 0 0;
@@ -30,11 +26,3 @@
   padding: 1.5rem;
 }
 
-/* #busca input {
-    width: 25rem;
-    background-color: rgb(192, 67, 67);
-  } */
-
-/* h1 {
-     text-align: left;
-   } */
