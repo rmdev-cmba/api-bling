@@ -17,8 +17,8 @@ const ProductView = ({ images }) => {
             <div>
                 <Image 
                 src={linksImagens[0]}
-                width={600}
-                height={600}
+                width={450}
+                height={450}
                  />
             </div>
             
